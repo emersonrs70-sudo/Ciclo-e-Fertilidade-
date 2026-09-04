@@ -10,6 +10,8 @@ import { CycleSettingsModal } from './components/CycleSettingsModal';
 import { OnboardingTour } from './components/OnboardingTour';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { ShortcutsAndGesturesModal } from './components/ShortcutsAndGesturesModal';
+import { OfflineIndicator } from './components/OfflineIndicator';
+import { PWAInstallBanner } from './components/PWAInstallBanner';
 import { CycleSettings, DailyLog, ReminderItem } from './types';
 import { formatISODate, getDayFertilityStatus, parseISODate } from './utils/cycleCalculations';
 
@@ -139,6 +141,7 @@ export default function App() {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [isTourOpen, setIsTourOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
 
   // Date constants
   const todayDate = new Date();
@@ -371,6 +374,14 @@ export default function App() {
             </button>
             <span className="text-stone-300 hidden sm:inline">•</span>
             <button
+              id="footer-install-btn"
+              onClick={() => setIsInstallModalOpen(true)}
+              className="text-xs font-semibold text-rose-600 hover:text-rose-800 underline flex items-center gap-1 cursor-pointer"
+            >
+              <span>Instalar no Celular (iOS / Android)</span>
+            </button>
+            <span className="text-stone-300 hidden sm:inline">•</span>
+            <button
               id="footer-shortcuts-btn"
               onClick={() => setIsShortcutsOpen(true)}
               className="text-xs font-semibold text-stone-600 hover:text-stone-900 underline flex items-center gap-1 cursor-pointer"
@@ -383,6 +394,15 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      {/* Offline Status Toast */}
+      <OfflineIndicator />
+
+      {/* PWA Guided Install Modal (when triggered via footer or shortcuts) */}
+      <PWAInstallBanner
+        forceOpenModal={isInstallModalOpen}
+        onCloseModal={() => setIsInstallModalOpen(false)}
+      />
 
       {/* Mobile Bottom Navigation Bar */}
       <MobileBottomNav

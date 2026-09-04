@@ -94,6 +94,22 @@ export const ShortcutsAndGesturesModal: React.FC<ShortcutsAndGesturesModalProps>
             </div>
           </div>
 
+          {/* Installation Info */}
+          <div className="space-y-2.5">
+            <h3 className="font-bold text-stone-900 text-sm flex items-center gap-1.5">
+              <Smartphone className="w-4 h-4 text-rose-600" />
+              Instalação como Aplicativo (PWA)
+            </h3>
+            <div className="space-y-2 bg-rose-50/60 rounded-xl p-3 border border-rose-100">
+              <p>
+                <strong>No iPhone/iPad (iOS Safari):</strong> Toque no botão Compartilhar e selecione <em>"Adicionar à Tela de Início"</em>.
+              </p>
+              <p>
+                <strong>No Android (Chrome):</strong> Toque no botão <em>"Instalar App"</em> no topo ou no menu de 3 pontinhos do navegador.
+              </p>
+            </div>
+          </div>
+
           <button
             type="button"
             onClick={onClose}

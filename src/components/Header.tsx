@@ -11,6 +11,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { CycleSettings, DayFertilityStatus } from '../types';
+import { PWAInstallBanner } from './PWAInstallBanner';
 
 interface HeaderProps {
   activeTab: 'calendar' | 'statistics' | 'reminders' | 'tips';
@@ -112,7 +113,10 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* PWA Install Button (iOS / Android / Desktop) */}
+          <PWAInstallBanner />
+
           {/* Quick Log Button (Desktop) */}
           <button
             id="header-quick-log-btn"
