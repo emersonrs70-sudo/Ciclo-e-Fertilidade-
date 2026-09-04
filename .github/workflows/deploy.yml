@@ -5,8 +5,9 @@ on:
     branches: ["main", "master"]
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages and branch push
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -35,6 +36,14 @@ jobs:
       - name: Build Application
         run: npm run build
 
+      # Publishes compiled dist to gh-pages branch for "Deploy from a branch" option
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+      # Deploys directly to Pages for "GitHub Actions" option
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

@@ -6,8 +6,9 @@ import {
   Sparkles, 
   CheckCircle2, 
   Info, 
-  Compass,
-  ArrowRight
+  Target,
+  ArrowDown,
+  ArrowUp
 } from 'lucide-react';
 
 export interface TourStep {
@@ -33,19 +34,19 @@ export const TOUR_STEPS: TourStep[] = [
   {
     id: 'step-welcome',
     targetId: 'fertility-risk-banner',
-    title: 'Monitor de Fertilidade & Risco Biológico',
-    badge: 'Diagnóstico Diário',
-    description: 'Este é o painel central da sua saúde reprodutiva. Ele calcula o nível de risco ou probabilidade de gravidez do dia em tempo real (Baixíssima Probabilidade, Margem de Segurança, Janela Fértil ou Menstruação).',
-    actionHint: 'A cor e as orientações mudam automaticamente conforme o dia do seu ciclo e os sintomas registrados.',
+    title: 'Monitor de Fertilidade & Diagnóstico Diário',
+    badge: 'Painel Central',
+    description: 'Este é o painel de status em tempo real da sua saúde reprodutiva. Ele calcula o nível biológico de probabilidade de gravidez do dia (Baixíssima Probabilidade, Janela Fértil, Pico Ovulatório ou Menstruação).',
+    actionHint: 'As orientações e cores mudam dinamicamente conforme os dias e os sintomas registrados.',
     preferredPosition: 'bottom',
   },
   {
     id: 'step-log-button',
     targetId: 'header-quick-log-btn',
-    title: 'Registro Diário Rápido (+ Registrar Hoje)',
+    title: 'Registro Rápido (+ Registrar Hoje)',
     badge: '1-Click Log',
-    description: 'Neste botão você anota as informações do seu dia: fluxo menstrual, temperatura corporal basal (TCB), textura do muco cervical (método sintotérmico), relações sexuais e sintomas corporais.',
-    actionHint: 'Quanto mais dados você registrar, maior será a precisão das previsões do algoritmo.',
+    description: 'Neste botão você anota os dados vitais do dia: fluxo menstrual, temperatura corporal basal (TCB), muco cervical (método sintotérmico), relações sexuais e sintomas corporais.',
+    actionHint: 'Quanto mais dados você registrar, maior a acurácia dos cálculos.',
     preferredPosition: 'bottom',
   },
   {
@@ -53,8 +54,8 @@ export const TOUR_STEPS: TourStep[] = [
     targetId: 'header-settings-btn',
     title: 'Calibração do Algoritmo do Ciclo',
     badge: 'Personalização',
-    description: 'Ajuste os parâmetros biológicos do seu corpo: a data de início da última menstruação (DUM), a duração média do seu ciclo e o histórico dos últimos meses.',
-    actionHint: 'Você pode recalibrar seus parâmetros sempre que seu ciclo mudar.',
+    description: 'Ajuste os parâmetros biológicos do seu corpo: a data de início da última menstruação (DUM), duração média do ciclo e histórico de regularidade.',
+    actionHint: 'Você pode recalibrar sempre que seu ciclo mudar ou após viagens/estresse.',
     preferredPosition: 'bottom',
   },
   {
@@ -62,8 +63,8 @@ export const TOUR_STEPS: TourStep[] = [
     targetId: 'nav-tab-calendar',
     title: 'Calendário Interativo & Diário',
     badge: 'Visão Mensal',
-    description: 'Exibe a grade mensal completa codificada por cores de fertilidade. Você pode clicar em qualquer dia para ver a fisiologia daquela data ou planejar seus dias futuros.',
-    actionHint: 'Clique em qualquer dia do mês para inspecionar e planejar suas relações com segurança.',
+    description: 'Exibe a grade mensal completa codificada por cores de risco e fertilidade. Permite planejar viagens, visualizar ovulações e clicar em qualquer dia para inspeção.',
+    actionHint: 'Clique ou deslize lateralmente (swipe) para navegar entre os meses.',
     tabToActivate: 'calendar',
     preferredPosition: 'bottom',
   },
@@ -71,9 +72,9 @@ export const TOUR_STEPS: TourStep[] = [
     id: 'step-stats-tab',
     targetId: 'nav-tab-statistics',
     title: 'Estatísticas & Gráficos com Recharts',
-    badge: 'Previsões Avançadas',
-    description: 'Acompanhe o histórico de duração dos últimos ciclos em gráficos interativos com a biblioteca Recharts, medindo o índice de regularidade e projeções dos próximos 3 ciclos.',
-    actionHint: 'Alterne entre gráficos de barras, tendência e fases biológicas.',
+    badge: 'Análise Avançada',
+    description: 'Gráficos interativos construídos com a biblioteca Recharts: histórico de duração dos ciclos, linha de tendência com média histórica, fases biológicas e índice de regularidade FIGO.',
+    actionHint: 'Alterne entre gráficos de barras, tendências e adicione novos ciclos históricos.',
     tabToActivate: 'statistics',
     preferredPosition: 'bottom',
   },
@@ -82,8 +83,8 @@ export const TOUR_STEPS: TourStep[] = [
     targetId: 'nav-tab-reminders',
     title: 'Lembretes Diários Inteligentes',
     badge: 'Notificações',
-    description: 'Configure alarmes matinais para medir a temperatura basal logo ao acordar e registrar o muco cervical à noite.',
-    actionHint: 'Marque como concluído cada dia.',
+    description: 'Configure alarmes matinais para aferir a temperatura basal ao acordar e lembretes noturnos para inspecionar o muco cervical.',
+    actionHint: 'Marque como concluído dia a dia para criar constância no monitoramento.',
     tabToActivate: 'reminders',
     preferredPosition: 'bottom',
   },
@@ -91,9 +92,9 @@ export const TOUR_STEPS: TourStep[] = [
     id: 'step-tips-tab',
     targetId: 'nav-tab-tips',
     title: 'Dicas Fundamentais & Assistente com IA',
-    badge: 'Central de Saúde',
-    description: 'Tenha acesso a guias sintotérmicos baseados em literatura médica, um tira-dúvidas frequente (FAQ) e uma assistente virtual interativa.',
-    actionHint: 'Você pode repetir este tutorial a qualquer momento!',
+    badge: 'Saúde & Dúvidas',
+    description: 'Acesse o guia sintotérmico baseado em literatura médica, FAQ com perguntas frequentes e o assistente de perguntas e respostas para tirar qualquer dúvida.',
+    actionHint: 'Você pode reabrir este tour a qualquer momento no rodapé ou pelo menu.',
     tabToActivate: 'tips',
     preferredPosition: 'bottom',
   },
@@ -117,7 +118,10 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
 }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState<number>(0);
   const [targetRect, setTargetRect] = useState<RectState | null>(null);
-  const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const [windowSize, setWindowSize] = useState({ 
+    width: typeof window !== 'undefined' ? window.innerWidth : 1024, 
+    height: typeof window !== 'undefined' ? window.innerHeight : 768 
+  });
 
   const currentStep = TOUR_STEPS[currentStepIndex];
 
@@ -149,43 +153,57 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
     const el = getEffectiveElement(currentStep.targetId);
     if (el) {
       const rect = el.getBoundingClientRect();
-      setTargetRect({
-        top: rect.top,
-        left: rect.left,
-        width: rect.width,
-        height: rect.height,
-        bottom: rect.bottom,
-        right: rect.right,
-      });
-    } else {
-      setTargetRect(null);
+      // Ensure element actually has measurable dimensions
+      if (rect.width > 0 && rect.height > 0) {
+        setTargetRect({
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height,
+          bottom: rect.bottom,
+          right: rect.right,
+        });
+        return;
+      }
     }
+    setTargetRect(null);
   }, [isOpen, currentStep, getEffectiveElement]);
 
+  // If the step requests a specific tab, switch to it immediately
   useEffect(() => {
     if (isOpen && currentStep?.tabToActivate && activeTab !== currentStep.tabToActivate) {
       setActiveTab(currentStep.tabToActivate);
     }
   }, [isOpen, currentStepIndex, currentStep, activeTab, setActiveTab]);
 
+  // Scroll to element and measure position with multiple passes to handle DOM rendering
   useEffect(() => {
     if (!isOpen || !currentStep) return;
 
-    const timer = setTimeout(() => {
-      const el = getEffectiveElement(currentStep.targetId);
-      if (el) {
-        el.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-          inline: 'nearest',
-        });
-      }
-      updateRect();
-    }, 120);
+    const measurePasses = [40, 140, 300];
+    const timers: NodeJS.Timeout[] = [];
 
-    return () => clearTimeout(timer);
-  }, [isOpen, currentStepIndex, currentStep, updateRect, getEffectiveElement]);
+    measurePasses.forEach((delay) => {
+      const timer = setTimeout(() => {
+        const el = getEffectiveElement(currentStep.targetId);
+        if (el) {
+          el.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'nearest',
+          });
+        }
+        updateRect();
+      }, delay);
+      timers.push(timer);
+    });
 
+    return () => {
+      timers.forEach(clearTimeout);
+    };
+  }, [isOpen, currentStepIndex, currentStep, activeTab, updateRect, getEffectiveElement]);
+
+  // Handle window resize and scroll
   useEffect(() => {
     if (!isOpen) return;
 
@@ -221,68 +239,144 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
     onClose();
   };
 
-  // Tooltip placement calculated unconditionally
-  const tooltipStyle = useMemo(() => {
+  // Card placement computation with safe bounds and clear orientation
+  const { tooltipStyle, isAboveTarget } = useMemo(() => {
     const cardWidth = Math.min(420, windowSize.width - 32);
-    const padding = 12;
+    const padding = 16;
 
     if (!targetRect) {
       return {
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: `${cardWidth}px`,
+        tooltipStyle: {
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: `${cardWidth}px`,
+        },
+        isAboveTarget: false,
       };
     }
 
     const spaceBelow = windowSize.height - targetRect.bottom;
     const spaceAbove = targetRect.top;
-    const showBelow = spaceBelow >= 260 || spaceBelow > spaceAbove;
+    
+    // Choose placing below if there is room for ~270px card, else above
+    const placeBelow = spaceBelow >= 270 || spaceBelow > spaceAbove;
 
-    let top = showBelow 
-      ? targetRect.bottom + padding 
-      : targetRect.top - 280 - padding;
+    let top: number;
+    if (placeBelow) {
+      top = targetRect.bottom + padding;
+    } else {
+      top = targetRect.top - 280 - padding;
+    }
 
-    top = Math.max(16, Math.min(windowSize.height - 310, top));
+    // Keep inside screen bounds
+    top = Math.max(16, Math.min(windowSize.height - 300, top));
 
     const targetCenterX = targetRect.left + targetRect.width / 2;
     let left = targetCenterX - cardWidth / 2;
     left = Math.max(16, Math.min(windowSize.width - cardWidth - 16, left));
 
     return {
-      top: `${top}px`,
-      left: `${left}px`,
-      width: `${cardWidth}px`,
+      tooltipStyle: {
+        top: `${top}px`,
+        left: `${left}px`,
+        width: `${cardWidth}px`,
+      },
+      isAboveTarget: !placeBelow,
     };
   }, [targetRect, windowSize]);
 
   if (!isOpen) return null;
 
   const isLastStep = currentStepIndex === TOUR_STEPS.length - 1;
+  const spotlightPadding = 6;
+  const spotlightRadius = 16;
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden pointer-events-auto">
-      {/* Dimmed backdrop */}
-      <div 
-        onClick={handleSkip}
-        className="absolute inset-0 bg-stone-950/60 backdrop-blur-2xs transition-opacity duration-300"
-      />
+      {/* 1. SVG Cutout Mask: darkens the whole screen EXCEPT the highlighted target element */}
+      <svg className="fixed inset-0 w-full h-full pointer-events-none z-40 transition-all duration-300">
+        <defs>
+          <mask id="tour-spotlight-mask">
+            {/* White fills everything (makes entire overlay dark) */}
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            
+            {/* Black cuts out the spotlight hole so the actual element shines through 100% brightly */}
+            {targetRect && (
+              <rect
+                x={targetRect.left - spotlightPadding}
+                y={targetRect.top - spotlightPadding}
+                width={targetRect.width + spotlightPadding * 2}
+                height={targetRect.height + spotlightPadding * 2}
+                rx={spotlightRadius}
+                ry={spotlightRadius}
+                fill="black"
+              />
+            )}
+          </mask>
+        </defs>
 
-      {/* Floating Card */}
+        {/* Dark backdrop with cutout */}
+        <rect
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          fill="rgba(15, 23, 42, 0.70)"
+          mask="url(#tour-spotlight-mask)"
+          className="pointer-events-auto cursor-pointer"
+          onClick={handleSkip}
+        />
+      </svg>
+
+      {/* 2. Luminous Spotlight Frame & Glowing Highlight Box around the target element */}
+      {targetRect && (
+        <div
+          style={{
+            position: 'fixed',
+            top: `${targetRect.top - spotlightPadding}px`,
+            left: `${targetRect.left - spotlightPadding}px`,
+            width: `${targetRect.width + spotlightPadding * 2}px`,
+            height: `${targetRect.height + spotlightPadding * 2}px`,
+            borderRadius: `${spotlightRadius}px`,
+          }}
+          className="pointer-events-none z-50 border-2 border-rose-500 shadow-[0_0_0_4px_rgba(244,63,94,0.35),0_0_35px_rgba(244,63,94,0.65)] transition-all duration-300 animate-pulse"
+        >
+          {/* Subtle outer ripple ping */}
+          <div 
+            style={{ borderRadius: `${spotlightRadius}px` }} 
+            className="absolute -inset-1 border-2 border-rose-400 opacity-75 animate-ping pointer-events-none" 
+          />
+
+          {/* Glowing Beacon Pill pointing to the active feature */}
+          <div className="absolute -top-3 left-3 sm:left-4 bg-rose-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-lg uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+            <span>Função em Destaque</span>
+          </div>
+        </div>
+      )}
+
+      {/* 3. Floating Explanatory Card */}
       <div 
         style={tooltipStyle}
-        className="absolute z-50 bg-white rounded-3xl shadow-2xl border border-rose-100 p-5 space-y-4 animate-in fade-in zoom-in-95 duration-200"
+        className="fixed z-50 bg-white rounded-3xl shadow-2xl border border-rose-100 p-5 space-y-4 animate-in fade-in zoom-in-95 duration-200"
       >
+        {/* Header with Title & Close */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="p-1.5 rounded-xl bg-rose-100 text-rose-600">
-              <Sparkles className="w-4 h-4" />
+            <span className="p-2 rounded-2xl bg-rose-100 text-rose-600 shrink-0">
+              <Target className="w-4 h-4" />
             </span>
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-rose-600">
-                {currentStep.badge || `Passo ${currentStepIndex + 1} de ${TOUR_STEPS.length}`}
-              </span>
-              <h3 className="text-sm font-bold text-stone-900 leading-snug">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md">
+                  {currentStep.badge || `Passo ${currentStepIndex + 1} de ${TOUR_STEPS.length}`}
+                </span>
+                <span className="text-[10px] font-semibold text-stone-400">
+                  {currentStepIndex + 1}/{TOUR_STEPS.length}
+                </span>
+              </div>
+              <h3 className="text-sm sm:text-base font-extrabold text-stone-900 leading-snug mt-1">
                 {currentStep.title}
               </h3>
             </div>
@@ -291,32 +385,44 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
           <button
             type="button"
             onClick={handleSkip}
-            className="p-1 text-stone-400 hover:text-stone-700 rounded-lg hover:bg-stone-100 cursor-pointer"
+            title="Fechar tour (Esc)"
+            className="p-1.5 text-stone-400 hover:text-stone-700 rounded-xl hover:bg-stone-100 transition cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        <p className="text-xs text-stone-600 leading-relaxed">
+        {/* Description */}
+        <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
           {currentStep.description}
         </p>
 
+        {/* Action Hint with indicator arrow */}
         {currentStep.actionHint && (
-          <div className="bg-rose-50/60 rounded-xl p-2.5 text-[11px] text-stone-700 flex items-start gap-1.5 border border-rose-100">
-            <Info className="w-3.5 h-3.5 text-rose-600 shrink-0 mt-0.5" />
-            <span>{currentStep.actionHint}</span>
+          <div className="bg-rose-50/70 rounded-xl p-3 text-[11px] text-stone-700 flex items-start gap-2 border border-rose-100">
+            {isAboveTarget ? (
+              <ArrowDown className="w-4 h-4 text-rose-600 shrink-0 mt-0.5 animate-bounce" />
+            ) : (
+              <ArrowUp className="w-4 h-4 text-rose-600 shrink-0 mt-0.5 animate-bounce" />
+            )}
+            <span className="leading-snug">
+              <strong>Dica de uso:</strong> {currentStep.actionHint}
+            </span>
           </div>
         )}
 
-        {/* Progress & Controls */}
-        <div className="flex items-center justify-between pt-2 border-t border-stone-100">
-          <div className="flex gap-1">
+        {/* Progress Dots & Navigation Buttons */}
+        <div className="flex items-center justify-between pt-3 border-t border-stone-100">
+          <div className="flex items-center gap-1.5">
             {TOUR_STEPS.map((_, i) => (
-              <div
+              <button
                 key={i}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === currentStepIndex ? 'w-5 bg-rose-600' : 'w-1.5 bg-stone-200'
+                type="button"
+                onClick={() => setCurrentStepIndex(i)}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  i === currentStepIndex ? 'w-6 bg-rose-600' : 'w-2 bg-stone-200 hover:bg-rose-300'
                 }`}
+                title={`Ir para passo ${i + 1}`}
               />
             ))}
           </div>
@@ -326,7 +432,7 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
               <button
                 type="button"
                 onClick={handlePrev}
-                className="px-3 py-1.5 rounded-xl border border-stone-200 text-xs font-semibold text-stone-600 hover:bg-stone-50 cursor-pointer"
+                className="px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-semibold text-stone-600 hover:bg-stone-50 active:scale-95 transition cursor-pointer"
               >
                 Anterior
               </button>
@@ -335,10 +441,10 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
             <button
               type="button"
               onClick={handleNext}
-              className="px-4 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 active:scale-95 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition cursor-pointer"
+              className="px-4.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 active:scale-95 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition cursor-pointer"
             >
-              <span>{isLastStep ? 'Concluir' : 'Próximo'}</span>
-              <ChevronRight className="w-3.5 h-3.5" />
+              <span>{isLastStep ? 'Concluir Tour' : 'Próximo'}</span>
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>
