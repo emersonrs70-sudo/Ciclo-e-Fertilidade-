@@ -1,0 +1,6 @@
+{
+  "name": "Monitor de Ciclo & Fertilidade",
+  "description": "Sistema completo para monitoramento do ciclo menstrual, cálculo de janelas de probabilidade de gravidez, calendário intuitivo, lembretes diários, estatísticas de fertilidade e espaço de dicas e tira-dúvidas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
