@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="50%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#881337" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#roseGrad)" />
+  <g filter="url(#shadow)">
+    <!-- Central stylized fertility / heart lotus icon -->
+    <path d="M256 416 C256 416 112 320 112 216 C112 154 162 104 224 104 C239 104 253 107 266 113 C279 107 293 104 308 104 C370 104 420 154 420 216 C420 320 256 416 256 416 Z" fill="#ffffff" opacity="0.95" />
+    <circle cx="256" cy="220" r="32" fill="#f43f5e" />
+    <path d="M256 160 C256 160 276 195 276 220 C276 231 267 240 256 240 C245 240 236 231 236 220 C236 195 256 160 256 160 Z" fill="#ffffff" />
+  </g>
+</svg>

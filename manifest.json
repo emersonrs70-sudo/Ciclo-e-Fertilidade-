@@ -1,0 +1,38 @@
+{
+  "id": "/",
+  "name": "Monitor de Ciclo & Fertilidade",
+  "short_name": "CicloFertil",
+  "description": "Sistema completo para monitoramento do ciclo menstrual, cálculo de janelas de probabilidade de gravidez e fertilidade.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff1f2",
+  "theme_color": "#f43f5e",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
